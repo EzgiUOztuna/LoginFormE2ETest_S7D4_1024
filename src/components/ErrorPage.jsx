@@ -7,7 +7,7 @@ export default function ErrorPage() {
 
   return (
     <div className="error-container">
-      <h2>Login'de hata lütfen tekrar deneyiniz</h2>
+      <h2>Please enter a valid email address</h2>
       <Button color="primary" onClick={() => history.push('/')}>
         Tekrar Dene
       </Button>
