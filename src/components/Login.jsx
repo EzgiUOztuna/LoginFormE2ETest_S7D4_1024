@@ -73,10 +73,10 @@ export default function Login() {
               item.password === form.password && item.email === form.email
           );
           if (user) {
-            setForm(initialForm);
-            history.push('/main');
+            //setForm(initialForm);
+            history.push('/success');
           } else {
-            history.push('/error');
+            history.push('/');
           }
         });
     }
@@ -95,6 +95,7 @@ export default function Login() {
           value={form.email}
           valid={errors.email.length === 0}
           invalid={errors.email.length > 0}
+          data-cy= "email-input"
         />
         {errors.email && <FormFeedback>{errors.email}</FormFeedback>}
       </FormGroup>
@@ -109,6 +110,7 @@ export default function Login() {
           value={form.password}
           valid={errors.password.length === 0}
           invalid={errors.password.length > 0}
+          data-cy= "password-input"
         />
         {errors.password && <FormFeedback>{errors.password}</FormFeedback>}
       </FormGroup>
@@ -121,6 +123,7 @@ export default function Login() {
           onChange={handleChange}
           invalid={!form.terms}
           valid={form.terms}
+          data-cy= "terms-input"
         />{' '}
         <Label htmlFor="terms" check>
           I agree to terms of service and privacy policy
@@ -128,7 +131,7 @@ export default function Login() {
         {errors.terms && <FormFeedback>{errors.terms}</FormFeedback>}
       </FormGroup>
       <FormGroup className="text-center p-4">
-        <Button color="primary" disabled={!isValid}>
+        <Button data-cy= "submit-button" color="primary" disabled={!isValid}>
           Sign In
         </Button>
       </FormGroup>

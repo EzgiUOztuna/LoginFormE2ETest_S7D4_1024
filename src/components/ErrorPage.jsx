@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import React from 'react';
 
 export default function ErrorPage() {
   const history = useHistory();
